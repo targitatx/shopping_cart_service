@@ -94,6 +94,10 @@ class App extends Component {
   
   render(){
     return (
+        // <AppContainer>
+        //   <div>hihello!</div>
+        // </AppContainer>
+
       <AppContainer>
         <Total> <b>cart total: </b>${commaNumber(this.state.cartTotal)}.00 </Total>
         <ItemList items={this.state.inCart} changeQuantity={this.changeQuantity.bind(this)}/>
@@ -103,4 +107,9 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+// export {
+//   App,
+//   AppContainer
+// };
+
+export default App;

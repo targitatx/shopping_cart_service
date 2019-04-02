@@ -100,7 +100,7 @@ class CartItem extends React.Component{
                   <option value="8">8</option>
                   <option value="9">9</option>
                   <option value="10">10</option>
-                </select><span style={{fontSize: "10px"}}>qty</span></UnderlineMe> | <img height="15 px" width="15 px" src={item.image_url}/>
+                </select><span style={{fontSize: "10px"}}>qty</span></UnderlineMe> <span style={{border: "1px solid rgb(214, 214, 214);"}}> </span> <img height="15 px" width="15 px" src={item.image_url}/>
               </form>
           </div>
         </Contents>
