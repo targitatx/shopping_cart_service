@@ -5,8 +5,8 @@ import styled from "styled-components";
 const List = styled.div`
   width: 365px !important;
   max-height: 450px;
-  overflow: scroll;
   padding-right: 15px !important;
+  overflow: scroll;
   `
 
   // background: linear-gradient(to bottom, rgba(251, 251, 251, 1) 0%, rgba(251, 251, 251, 0) 100%);
