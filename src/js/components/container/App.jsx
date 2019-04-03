@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import Axios from "axios"
 import commaNumber from "comma-number"
 import styled from "styled-components"
@@ -94,8 +93,9 @@ class App extends Component {
   
   render(){
     return (
+        // <div id="test">test</div>
       <AppContainer>
-        <Total> <b>cart total: </b>${commaNumber(this.state.cartTotal)}.00 </Total>
+        <Total id="total"> <b>cart total: </b>${commaNumber(this.state.cartTotal)}.00 </Total>
         <ItemList items={this.state.inCart} changeQuantity={this.changeQuantity.bind(this)}/>
         <Button>view cart + check out</Button>
       </AppContainer>
@@ -103,4 +103,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default App;
