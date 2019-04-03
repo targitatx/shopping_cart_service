@@ -1,6 +1,8 @@
 const app = require('./server.js')
 const PORT = 3000;
 
+console.log('running from server_connection.js')
+
 app.listen(PORT, (err, data)=>{
   if (err){
     console.log('Error! Unable to connect to server: ', err)
