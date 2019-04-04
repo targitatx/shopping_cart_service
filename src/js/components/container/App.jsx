@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import Axios from "axios"
 import commaNumber from "comma-number"
 import styled from "styled-components"
@@ -60,7 +59,7 @@ class App extends Component {
   }
 
   getCartItems(e){
-    Axios('/cart')
+    Axios('http://localhost:3000/cart')
     .then((data)=>{
       console.log('Axios get successful: ', data)
       this.setState({
@@ -75,7 +74,7 @@ class App extends Component {
   changeQuantity(sku, quantity){
     console.log('sku and quantity: ', sku, quantity)
     Axios
-    .post('/cart',{"sku": sku, "quantity": quantity})
+    .post('http://localhost:3000/cart',{"sku": sku, "quantity": quantity})
     .then(()=>{
       this.getCartItems();
     })
@@ -94,8 +93,8 @@ class App extends Component {
   
   render(){
     return (
-      <AppContainer>
-        <Total> <b>cart total: </b>${commaNumber(this.state.cartTotal)}.00 </Total>
+      <AppContainer >
+        <Total id="total"> <b>cart total: </b>${commaNumber(this.state.cartTotal)}.00 </Total>
         <ItemList items={this.state.inCart} changeQuantity={this.changeQuantity.bind(this)}/>
         <Button>view cart + check out</Button>
       </AppContainer>
@@ -103,4 +102,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default App;
