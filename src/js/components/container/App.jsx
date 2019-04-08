@@ -92,11 +92,12 @@ class App extends Component {
   }
   
   render(){
+    window.Test = "hello"
     return (
-      <AppContainer >
+      <AppContainer>
         <Total id="total"> <b>cart total: </b>${commaNumber(this.state.cartTotal)}.00 </Total>
         <ItemList items={this.state.inCart} changeQuantity={this.changeQuantity.bind(this)}/>
-        <Button>view cart + check out</Button>
+        <Button onClick={()=>{this.changeQuantity(window.State, 1)}}>view cart + check out</Button>
       </AppContainer>
     )
   }
