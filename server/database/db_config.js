@@ -9,11 +9,11 @@
 
 const { Client } = require('pg')
 const client = new Client({
-  host: 'targit.cttz70y892d2.us-east-2.rds.amazonaws.com',
+  host: 'targit-cart.cttz70y892d2.us-east-2.rds.amazonaws.com',
   port: 5432,
-  dbame: 'drewdistefano',
-  password: 'passsword'
-
+  // username: 'postgres',
+  database: 'postgres',
+  password: 'password'
 })
 
 client.connect((err, data)=>{

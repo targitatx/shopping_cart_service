@@ -18,7 +18,7 @@ const { updateItemQuantity } = require('./database/helper_functions.js')
 app.get('/cart', (req, res)=>{
   getAllItems((err, data)=>{
     if (err){
-      console.log('Server unable to get data!')
+      console.log('Server unable to get data!', err)
       res.end();
     }
     else {
@@ -32,7 +32,7 @@ app.post('/cart', (req, res)=>{
   console.log('req.body>>>', req.body)
   updateItemQuantity(req.body.sku, req.body.quantity, (err, data)=>{
     if (err){
-      console.log('Server unable to update quantity!')
+      console.log('Server unable to update quantity!', err)
       res.end();
     }
     else {
