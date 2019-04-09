@@ -11,7 +11,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(express.static('../dist'))
+app.use(express.static('./dist'))
 
 const { getAllItems } = require('./database/helper_functions.js')
 const { updateItemQuantity } = require('./database/helper_functions.js')
