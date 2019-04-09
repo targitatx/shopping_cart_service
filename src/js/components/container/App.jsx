@@ -59,7 +59,8 @@ class App extends Component {
   }
 
   getCartItems(e){
-    Axios('ec2-3-19-70-44.us-east-2.compute.amazonaws.com:4000/cart')
+    Axios
+    .get('ec2-3-19-70-44.us-east-2.compute.amazonaws.com:4000/cart', { headers: {'Access-Control-Allow-Origin': `ec2-3-19-70-44.us-east-2.compute.amazonaws.com:4000/cart` }})
     .then((data)=>{
       console.log('Axios get successful: ', data)
       this.setState({
