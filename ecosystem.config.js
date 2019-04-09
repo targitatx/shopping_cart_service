@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name: 'targit',
+    name: 'cart',
     script: './server/server_connection.js'
   }],
   deploy: {
@@ -12,7 +12,7 @@ module.exports = {
       repo: 'https://github.com/targitatx/shopping_cart_service.git',
       path: '/home/ubuntu/Code/targit/',
       // 'post-deploy': 'npm install && npm run build && npm run start && pm2 startOrRestart ecosystem.config.js'
-      'post-deploy': 'npm install && npm run build && pm2 startOrRestart ecosystem.config.js'
+      'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
     }
   }
 }
