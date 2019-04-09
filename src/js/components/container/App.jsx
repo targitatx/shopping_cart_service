@@ -60,7 +60,7 @@ class App extends Component {
 
   getCartItems(e){
     Axios
-    .get('http://ec2-3-19-70-44.us-east-2.compute.amazonaws.com:4000/cart', { headers: {'Access-Control-Allow-Origin': "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"}})
+    .get('ec2-3-19-70-44.us-east-2.compute.amazonaws.com:4000/cart', { headers: {'Access-Control-Allow-Origin': "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"}})
     .then((data)=>{
       console.log('Axios get successful: ', data)
       this.setState({
@@ -75,7 +75,7 @@ class App extends Component {
   changeQuantity(sku, quantity){
     console.log('sku and quantity: ', sku, quantity)
     Axios
-    .post('http://ec2-3-19-70-44.us-east-2.compute.amazonaws.com:4000/cart',{"sku": sku, "quantity": quantity, headers: {'Access-Control-Allow-Origin': "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"}})
+    .post('ec2-3-19-70-44.us-east-2.compute.amazonaws.com:4000/cart',{"sku": sku, "quantity": quantity, headers: {'Access-Control-Allow-Origin': "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"}})
     .then(()=>{
       this.getCartItems();
     })
