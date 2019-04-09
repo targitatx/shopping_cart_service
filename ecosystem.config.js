@@ -1,7 +1,7 @@
 module.exports = {
   apps: [{
     name: 'targit',
-    script: './server/server.js'
+    script: './server/server_connection.js'
   }],
   deploy: {
     production: {
