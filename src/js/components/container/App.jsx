@@ -60,7 +60,7 @@ class App extends Component {
 
   getCartItems(e){
     Axios
-    .get('/cart', { headers: {'Access-Control-Allow-Origin': "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"}})
+    .get('/cart')
     .then((data)=>{
       console.log('Axios get successful: ', data)
       this.setState({
@@ -75,7 +75,7 @@ class App extends Component {
   changeQuantity(sku, quantity){
     console.log('sku and quantity: ', sku, quantity)
     Axios
-    .post('/cart',{"sku": sku, "quantity": quantity, headers: {'Access-Control-Allow-Origin': "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"}})
+    .post('/cart',{"sku": sku, "quantity": quantity})
     .then(()=>{
       this.getCartItems();
     })
