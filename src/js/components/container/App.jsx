@@ -56,6 +56,9 @@ class App extends Component {
 
   componentDidMount(){
     this.getCartItems();
+    Axios.get('/test')
+    .then(()=>{console.log('test successful')})
+    .catch(()=>{console.log('test not successful')})
   }
 
   getCartItems(e){
