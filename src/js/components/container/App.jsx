@@ -63,7 +63,7 @@ class App extends Component {
 
   getCartItems(e){
     Axios
-    .get('/cart')
+    .get('http://ec2-3-19-70-44.us-east-2.compute.amazonaws.com:4000/cart')
     .then((data)=>{
       console.log('Axios get successful: ', data)
       this.setState({
@@ -78,7 +78,7 @@ class App extends Component {
   changeQuantity(sku, quantity){
     console.log('sku and quantity: ', sku, quantity)
     Axios
-    .post('/cart',{"sku": sku, "quantity": quantity})
+    .post('http://ec2-3-19-70-44.us-east-2.compute.amazonaws.com:4000/cart',{"sku": sku, "quantity": quantity})
     .then(()=>{
       this.getCartItems();
     })
