@@ -18,6 +18,11 @@ app.use(express.static('../dist'))
 const { getAllItems } = require('./database/helper_functions.js')
 const { updateItemQuantity } = require('./database/helper_functions.js')
 
+app.get('/test', (req, res)=>{
+  console.log('LOL!!!!')
+  res.end();
+})
+
 app.get('/cart', (req, res)=>{
   getAllItems((err, data)=>{
     if (err){
@@ -25,7 +30,7 @@ app.get('/cart', (req, res)=>{
       res.end();
     }
     else {
-      // console.log('Here is your data!', data)
+      console.log('Here is your data!', data)
       res.send(data);
     }
   })
