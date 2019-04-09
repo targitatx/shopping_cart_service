@@ -11,7 +11,7 @@ const { Client } = require('pg')
 const client = new Client({
   host: 'targit-cart.cttz70y892d2.us-east-2.rds.amazonaws.com',
   port: 5432,
-  // username: 'postgres',
+  user: 'drewdistefano',
   database: 'postgres',
   password: 'password'
 })
@@ -21,7 +21,7 @@ client.connect((err, data)=>{
     console.log('error connecting to db:', err)
   }
   else {
-    console.log('sucess, connected to db!')
+    console.log('success, connected to db!')
   }
 });
 
