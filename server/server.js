@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // });
 
 app.use(cors());
-app.use(express.static('dist'))
+app.use(express.static('../dist'))
 
 const { getAllItems } = require('./database/helper_functions.js')
 const { updateItemQuantity } = require('./database/helper_functions.js')
