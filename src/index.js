@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import App from "./js/components/container/App.jsx";
+import Popup from "./js/components/container/Popup.jsx";
 
-ReactDOM.render(<App />, document.getElementById('cart'));
+ReactDOM.render(<Popup />, document.getElementById('cart'));
