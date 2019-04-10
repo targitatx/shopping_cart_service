@@ -107,7 +107,6 @@ class App extends Component {
         <ItemList items={this.state.inCart} changeQuantity={this.changeQuantity.bind(this)}/>
         <Button onClick={()=>{this.changeQuantity(window.State, 1)}}>view cart + check out</Button>
       </AppContainer>
-
     )
   }
 }
