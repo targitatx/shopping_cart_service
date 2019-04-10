@@ -13,7 +13,6 @@ const getAllItems = (callback) => {
 
 const updateItemQuantity = (sku, quantity, callback) => {
   client.query(
-    console.log('updating quantity')
     `UPDATE inventory_items SET datecreated = NOW() WHERE sku = ${sku} and quantity = 0;
      UPDATE inventory_items SET quantity = ${quantity} WHERE sku = ${sku};`
     , (err, data)=>{
@@ -25,6 +24,13 @@ const updateItemQuantity = (sku, quantity, callback) => {
     }
   })
 }
+
+// updateItemQuantity(6,3, (err, data)=>{
+//   if (err){
+//     console.log('error!: ', err)
+//   }
+//   console.log('success')
+// })
 
 // getAllItems();
 // updateItemQuantity(3, 100)

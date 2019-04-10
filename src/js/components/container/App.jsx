@@ -52,30 +52,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentSKU: null,
       inCart: [],
       cartTotal: 0
     }
   }
 
   componentDidMount(){
-    this.setState({
-      currentSKU: window.State
-    })
-    console.log('currentSKU>>>', this.state.currentSKU)
     this.changeQuantity(window.State, 1)
     this.getCartItems();
+    Axios.get('/test')
+    .then(()=>{console.log('test successful')})
+    .catch(()=>{console.log('test not successful')})
   }
-
-  // getQuantityOfCurrentItem(){
-  //   for (let i=0; i<this.state.inCart.length; i++){
-  //     if (this.state.inCart[i].sku === this.state.currentSKU){
-  //       let answer = this.state.inCart[i].quantity++
-  //       console.log('answer>>>', answer)
-  //       return answer;
-  //     }
-  //   }
-  // }
 
   getCartItems(e){
     Axios
@@ -92,6 +80,7 @@ class App extends Component {
   }
 
   changeQuantity(sku, quantity){
+    console.log('sku and quantity: ', sku, quantity)
     Axios
     .post('http://ec2-3-19-70-44.us-east-2.compute.amazonaws.com:4000/cart',{"sku": sku, "quantity": quantity})
     .then(()=>{
@@ -116,7 +105,7 @@ class App extends Component {
       <AppContainer>
         <Total id="total"> <b>cart total: </b>${commaNumber(this.state.cartTotal)}.00 </Total>
         <ItemList items={this.state.inCart} changeQuantity={this.changeQuantity.bind(this)}/>
-        <Button >view cart + check out</Button>
+        <Button onClick={()=>{this.changeQuantity(window.State, 1)}}>view cart + check out</Button>
       </AppContainer>
 
     )
