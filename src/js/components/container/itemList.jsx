@@ -3,6 +3,8 @@ import CartItem from './CartItem.jsx';
 import styled from "styled-components";
 
 const List = styled.div`
+  width: 366px;
+  padding-right: 16px;
   max-height: 450px;
   overflow: scroll;
   `
