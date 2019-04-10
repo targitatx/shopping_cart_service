@@ -24,6 +24,7 @@ app.get('/test', (req, res)=>{
 })
 
 app.get('/cart', (req, res)=>{
+  console.log('AHHH GET ALL ITEMS!!!! : ) ')
   getAllItems((err, data)=>{
     if (err){
       console.log('Server unable to get data!', err)
