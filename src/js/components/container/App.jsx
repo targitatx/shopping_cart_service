@@ -58,7 +58,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.changeQuantity(window.State, 1)
+    this.changeQuantity(window.State)
     this.getCartItems();
     Axios.get('/test')
     .then(()=>{console.log('test successful')})
