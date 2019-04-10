@@ -19,12 +19,10 @@ const { getAllItems } = require('./database/helper_functions.js')
 const { updateItemQuantity } = require('./database/helper_functions.js')
 
 app.get('/test', (req, res)=>{
-  console.log('LOL!!!!')
   res.end();
 })
 
 app.get('/cart', (req, res)=>{
-  console.log('AHHH GET ALL ITEMS!!!! : ) ')
   getAllItems((err, data)=>{
     if (err){
       console.log('Server unable to get data!', err)

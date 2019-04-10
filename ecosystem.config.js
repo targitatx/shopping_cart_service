@@ -1,7 +1,7 @@
 module.exports = {
   apps: [{
     name: 'cart',
-    script: './server/server_connection.js'
+    script: 'server/server_connection.js'
   }],
   deploy: {
     production: {

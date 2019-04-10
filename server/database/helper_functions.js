@@ -26,14 +26,4 @@ const updateItemQuantity = (sku, quantity, callback) => {
   })
 }
 
-// updateItemQuantity(6,3, (err, data)=>{
-//   if (err){
-//     console.log('error!: ', err)
-//   }
-//   console.log('success')
-// })
-
-// getAllItems();
-// updateItemQuantity(3, 100)
-
 module.exports = { getAllItems, updateItemQuantity };
