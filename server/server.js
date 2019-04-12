@@ -19,10 +19,6 @@ app.use(express.static(path.join(__dirname, '../dist')))
 const { getAllItems } = require('./database/helper_functions.js')
 const { updateItemQuantity } = require('./database/helper_functions.js')
 
-app.get('/test', (req, res)=>{
-  res.end();
-})
-
 app.get('/cart', (req, res)=>{
   getAllItems((err, data)=>{
     if (err){

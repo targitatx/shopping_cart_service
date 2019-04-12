@@ -54,7 +54,12 @@ class Popup extends Component {
 
     this.state = {
       show: false,
+      currentSku: null
     };
+  }
+
+  componentDidMount(){
+    window.addEventListener('changeItem', (event)=>{this.setState({currentSku: event.detail})});
   }
 
   handleClose() {
@@ -74,15 +79,13 @@ class Popup extends Component {
 
         <Modal style={{width: "386px"}}
           show={this.state.show}
-          onHide={this.handleClose}
-          >
-          <App/>
+          onHide={this.handleClose}>
+
+          <App handleClose={this.handleClose} currentSku={this.state.currentSku}/>
         </Modal>
       </>
     );
   }
 }
-
-// render(<Example />);
 
 export default Popup;

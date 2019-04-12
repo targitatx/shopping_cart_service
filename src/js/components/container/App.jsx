@@ -58,11 +58,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.changeQuantity(window.State)
-    this.getCartItems();
-    Axios.get('/test')
-    .then(()=>{console.log('test successful')})
-    .catch(()=>{console.log('test not successful')})
+    this.changeQuantity(this.props.currentSku)
   }
 
   getCartItems(e){
@@ -104,7 +100,7 @@ class App extends Component {
 
       <AppContainer>
         <Total id="total"> <b>cart total: </b>${commaNumber(this.state.cartTotal)}.00 </Total>
-        <ItemList items={this.state.inCart} changeQuantity={this.changeQuantity.bind(this)}/>
+        <ItemList items={this.state.inCart} handleClose={this.props.handleClose} changeQuantity={this.changeQuantity.bind(this)}/>
         <Button onClick={()=>{this.changeQuantity(window.State, 1)}}>view cart + check out</Button>
       </AppContainer>
     )
