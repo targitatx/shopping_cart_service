@@ -85,7 +85,7 @@ class CartItem extends React.Component{
             <Price> ${commaNumber(item.price)} </Price><Each> {quantity > 1 ? "each" : null} </Each>
             <Span onClick={()=>{this.props.changeQuantity(item.sku, 0)}}><img height="10px" src="https://bit.ly/2UiCh2k"></img></Span>
           </div>
-          <UnderlineMe onClick={()=>{window.State=item.sku}}>{this.props.item.title}</UnderlineMe>
+          <UnderlineMe onClick={()=>{this.props.handleClose(); changeItem(item.sku)}}>{this.props.item.title}</UnderlineMe>
           <div>
               <form onChange={(e)=>{console.log('target.value: ', e.target.value); this.props.changeQuantity(item.sku, Number(e.target.value))}}>
             <UnderlineMe>
