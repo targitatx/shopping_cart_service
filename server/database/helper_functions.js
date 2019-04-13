@@ -26,6 +26,4 @@ const updateItemQuantity = (sku, quantity, callback) => {
     })
   }
   
-  console.log('hello from helpers')
-
 module.exports = { getAllItems, updateItemQuantity };
