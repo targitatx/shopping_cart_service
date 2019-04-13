@@ -58,7 +58,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.changeQuantity(this.props.currentSku)
+    this.getCartItems();
   }
 
   getCartItems(e){
@@ -94,14 +94,14 @@ class App extends Component {
       cartTotal: sum
     })
   }
-  
+
   render(){    
     return (
 
       <AppContainer>
         <Total id="total"> <b>cart total: </b>${commaNumber(this.state.cartTotal)}.00 </Total>
         <ItemList items={this.state.inCart} handleClose={this.props.handleClose} changeQuantity={this.changeQuantity.bind(this)}/>
-        <Button onClick={()=>{this.changeQuantity(window.State, 1)}}>view cart + check out</Button>
+        <Button onClick={()=>{this.changeQuantity(this.props.currentSku)}}>add to cart</Button>
       </AppContainer>
     )
   }

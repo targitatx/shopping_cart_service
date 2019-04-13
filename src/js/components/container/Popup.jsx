@@ -19,7 +19,7 @@ const Total = styled.h2 `
   `
 
 const ButtonStyled = styled.button`
-  max-width: 150px;
+  max-width: 100px;
   margin-top: 8px;
 
   position: relative;
@@ -40,8 +40,8 @@ const ButtonStyled = styled.button`
   background-color: rgb(204, 0, 0);
   border-width: 1px;
   border-style: solid;
-  padding: 12px 20px;
-  border-radius: 4px;
+  padding: 8px 14px;
+  border-radius: 2px;
   border-color: rgb(204, 0, 0);
 `
 
@@ -67,17 +67,18 @@ class Popup extends Component {
   }
 
   handleShow() {
+    window.scrollTo(0,0)
     this.setState({ show: true });
   }
 
   render() {
     return (
       <>
-        <ButtonStyled variant="primary" onClick={this.handleShow}>
-          Ship It
+        <ButtonStyled variant="primary" onMouseOver={this.handleShow}>
+          <img src='https://bit.ly/2X6vl61' height="50px" width="50px"></img>
         </ButtonStyled>
 
-        <Modal style={{width: "386px"}}
+        <Modal onMouseLeave={()=>{this.handleClose()}} style={{width: "386px", left: "72%", top: "66px"}}
           show={this.state.show}
           onHide={this.handleClose}>
 
