@@ -13,6 +13,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^3.4.1",
     "comma-number": "^2.0.0",
     "cors": "^2.8.5",
