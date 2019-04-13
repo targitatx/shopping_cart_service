@@ -14,8 +14,9 @@ const getAllItems = (callback) => {
 const updateItemQuantity = (sku, quantity, callback) => {
   console.log('QUANTITY: ', quantity)
   client.query(
-    `UPDATE inventory_items SET datecreated = NOW() WHERE sku = ${sku} and quantity = 0;
-     UPDATE inventory_items SET quantity = ${quantity === undefined ? `quantity+1 WHERE sku = ${sku} and quantity < 10` : quantity `WHERE sku = ${sku}`};`
+    `UPDATE inventory_items SET datecreated = NOW() WHERE sku = ${sku} and quantity = 0;`
+    (quantity === undefined ? `UPDATE inventory_items SET quantity = quantity+1 WHERE sku = ${sku} and quantity < 10`: 
+    `UPDATE inventory_items SET quantity = ${quantity} WHERE sku = ${sku}`)
     , (err, data)=>{
     if (err){
       callback(err)
@@ -26,21 +27,6 @@ const updateItemQuantity = (sku, quantity, callback) => {
   })
 }
 
-const updateAll = (quantity, callback) => {
-  console.log('QUANTITY: ', quantity)
-  client.query(
-     `UPDATE inventory_items SET quantity = 0`
-    , (err, data)=>{
-    if (err){
-      callback(err)
-    }
-    else {
-      callback(null, data)
-    }
-  })
-}
-
-updateAll(0, console.log)
-
+// `UPDATE inventory_items SET quantity = ${quantity === undefined ? 'quantity+1' : quantity} WHERE sku = ${sku};`
 
 module.exports = { getAllItems, updateItemQuantity };
