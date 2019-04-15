@@ -81,7 +81,7 @@ class Popup extends Component {
         <Modal onMouseLeave={()=>{this.handleClose()}} style={{width: "386px", left: "72%", top: "66px"}}
           show={this.state.show}
           onHide={this.handleClose}>
-
+          
           <App handleClose={this.handleClose} currentSku={this.state.currentSku}/>
         </Modal>
       </>

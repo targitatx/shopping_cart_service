@@ -14,7 +14,7 @@ const List = styled.div`
 const ItemList = (props) =>{
   return (
     <List>
-      {props.items.map(item => <CartItem handleClose={props.handleClose} changeQuantity={props.changeQuantity} item={item}/>)}
+      {props.items.map((item, index) => <CartItem handleClose={props.handleClose} changeQuantity={props.changeQuantity} item={item}/>)}
     </List>
   )
 }
