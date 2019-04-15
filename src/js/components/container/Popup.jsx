@@ -78,7 +78,7 @@ class Popup extends Component {
           <img src='http://tinyurl.com/yyvctfwp' height="50px" width="50px"></img>
         </ButtonStyled>
 
-        <Modal onMouseLeave={()=>{this.handleClose()}} style={{width: "386px", left: "72%", top: "66px"}}
+        <Modal onMouseLeave={()=>{this.handleClose()}} style={{width: "386px", left: "72%", top: "45px"}}
           show={this.state.show}
           onHide={this.handleClose}>
 
